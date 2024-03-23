@@ -27,6 +27,43 @@
 // Under these smaller buttons should be a larger button that says, “Fwip!”
 // when clicked this button will take you to a random title card that meets the criteria selected
 
+// create the FWIP page
+// see a random title ID from the selected streaming service, with the filter applied if you chose
+// the title "card" will contain the following information:
+//  the image for each title
+//  the title of each title
+//  The year the title was released
+//  The runtime of the content in minutes
+//  If a TV show, average episode length
+//  The Rotten Tomatoes rating, if any
+//  The director
+//  Up to 10 of the top billed cast
+//  A brief description of the film (no more than 500 characters)
+// Under the title card will be three buttons:
+//  Seen It
+//      Clicking this button will change the watched value to true
+//      The information will need to be pushed to the API for use in the profile page
+//      In the profile, use this info to generate a list of titles the user has seen under each streaming service
+//  Star Icon
+//      Clicking this button will change the importance value to true
+//      Having an importance value should eventually weight answers so when we ask the app to generate a watch list in the future, it will have a value for the important titles higher than titles that haven’t been seen.
+//  Haven’t seen It
+//      Clicking this button will change the watched value to false.
+//      False titles will not appear on the profile
+// Immediately under the card, place an “Edit Title” button to generate a <dialog> to allow the user to edit the title ID.
+
+// Fwip! Action Requirements
+// Indicate that they have seen the title
+//      Place a true value on the title ID, gained from the hash of the page
+//      Locate the hash identifier from the URL and have the user API store the positive value
+// Indicate that they have not seen the title
+//      Place a false value on the title ID, gained from the hash of the page
+//      Locate the hash identifier from the URL and have the API store the false value
+// Indicate that they would like to watch the title
+//      Set the importance of this value to 1 and anything without importance to 0
+//      Store this value in the user API
+//      This value will be used to generate a weight-calculated watch list
+
 // the moderation tool should
 // show the admin any changes requested by a user, noting the source
 // 1- from the "edit dialog" source
@@ -35,6 +72,5 @@
 // 4 - from the "delete dialog" source
 // the ability to modify any user input in another dialog box
 // a button to "Approve Changes"
-// for the edit, add, and move source, this will change the API in accordance with the submission
+// for the edit, add, and move source, this will change the main API in accordance with the submission
 // for the "delete" source this approval will DELETE the content from the API
-// The "Approve Changes" button will push the changes into the main API
