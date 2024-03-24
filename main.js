@@ -1,8 +1,31 @@
+// state
+
+const BASE_API = `https://kayabuki.neon-sole.ts.net/titles`;
+// this API should contain the basic API URL structure
+// extension API for service selection will include ?service="serviceId"
+// netflix, disney, amazon, max, paramount, etc
+// create API for IMDB ID of the title
+// moderation API
+
+// title (which has an ID)
+// -> which is either a movie or a tv show
+// -> contains episodes (if movie, episode count is 0)
+
+// home API pull and render
+
+const getTitles = async () => {
+  let fetchAPI = await fetch(BASE_API);
+  let transformerJson = await fetchAPI.json();
+  return transformerJson;
+};
+
 // create a logged in home page view
 // at the very top of the page, provide the user the ability to click to go to their profile
 // at the top, provide a small amount of direction for users
 // show large icons for each steaming service
 // that when clicked take you to the FWIP start menu
+
+// start menu pull and render
 
 // create a logged in FWIP start menu
 // at the very top of the page, provide the user the ability to click to go to their profile
@@ -26,6 +49,8 @@
 // all changes will be pushed to a "moderation queue" API that will then be delivered to a moderation tool
 // Under these smaller buttons should be a larger button that says, “Fwip!”
 // when clicked this button will take you to a random title card that meets the criteria selected
+
+// FWIP pull and render
 
 // create the FWIP page
 // see a random title ID from the selected streaming service, with the filter applied if you chose
